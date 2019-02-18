@@ -1,5 +1,6 @@
 {
     "name": "b0n/cakephp_ckeditor",
+    "type": "cakephp-plugin",
     "license": "MIT",
     "require": {
         "php": ">=5.3.0",
