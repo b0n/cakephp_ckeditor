@@ -8,3 +8,22 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 };
+
+$.each(CKEDITOR.dtd.$removeEmpty, function (i, value) {
+  CKEDITOR.dtd.$removeEmpty[i] = false;
+});
+
+// Display all children elements allowed in a <a> element.
+//console.log(CKEDITOR.dtd[ 'a' ]);
+
+// Simply redefine DTD like this:
+CKEDITOR.dtd['a']['div'] = 1;
+CKEDITOR.dtd['a']['p'] = 1;
+CKEDITOR.dtd['a']['i'] = 1;
+CKEDITOR.dtd['a']['span'] = 1;
+
+// Check if <div> can be contained in a <p> element.
+//console.log( !!CKEDITOR.dtd[ 'a' ][ 'div' ] ); // default false
+
+// Check if <a> can be contained in a <div> element.
+//console.log( !!CKEDITOR.dtd[ 'div' ][ 'a' ] ); // default true
